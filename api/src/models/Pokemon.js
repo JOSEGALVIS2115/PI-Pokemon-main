@@ -3,76 +3,53 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('Pokemon', {
+  sequelize.define('pokemon', {
     id: {
       type: DataTypes.UUID,
-      primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        notEmpty: {
-          msg: 'Es necesario que el pokemon tenga nombre',
-        },
-      },
     },
-    image: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: {
-          msg: 'Es necesario que el pokemon tenga imagen',
-        },
-        isUrl: {
-          msg: 'La imagen tiene que ser una url válida',
-        },
-      },
-    },
-    life: {
+    hp: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     attack: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     defense: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     speed: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
     height: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
       allowNull: true,
-      validate: {
-        isNumeric: {
-          msg: 'La altura del pokemon debe ser un valor numérico',
-        },
-        min: {
-          args: [0],
-          msg: 'La altura del pokemon tiene que ser mayor a 0'
-        }
-      },
     },
     weight: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
       allowNull: true,
-      validate: {
-        isNumeric: {
-          msg: 'El peso del pokemon debe ser un valor numérico',
-        },
-        min: {
-          args: [0],
-          msg: 'El peso del pokemon tiene que ser mayor a 0'
-        }
-      },
     },
-  }, {
-    timestamps: false, freezeTableName: true
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    createInDb: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'true',
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   });
 };

@@ -1,0 +1,39 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Estilos Fondo de Landing */
+.body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('https://images.alphacoders.com/115/1159891.jpg');
+  background-size: cover;
+
+}
+
+
+/* Estilos Button Landing Page */
+.button { 
+  background: #fbcb1fe0;
+  font-family: inherit;
+  padding: 0.7em 1.3em;
+  font-weight: 900;
+  font-size: 17px;
+  border: 6px solid rgb(6, 20, 102);
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  margin-top: 15px;
+  margin-left: 1000px;
+}
+
+.button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}

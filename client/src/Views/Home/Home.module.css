@@ -1,0 +1,106 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://images3.alphacoders.com/131/1313938.jpg');
+    background-size: cover;
+    height: fit-content;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around; 
+    border-color: black;
+    border: 5px;
+}
+
+.cards{
+    display: grid;
+    gap: 1rem;
+    margin-left: -1rem;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4%;
+}
+
+
+.logo{
+width: 20%;
+height: 100%;
+
+}
+
+.button {
+    background: #FBCA1F;
+    font-family: inherit;
+    padding: 0.2em 0.8em;
+    font-weight: 900;
+    font-size: 17px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    margin-top: 10px;
+}
+
+.button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+@keyframes load-loop {
+    0% {
+      background-position: 100%;
+    }
+  
+    40% {
+      background-position: 50%;
+    }
+  
+    50% {
+      background-position: 50%;
+    }
+  
+    90% {
+      background-position: 0%;
+    }
+  
+    100% {
+      background-position: 0%;
+    }
+  }
+  
+
+  .loader {
+    width: 320px;
+    height: 100px;
+    border-radius: 20px;
+    color: #F4BF00;
+    border: 2px solid;
+    position: relative;
+    top:130px;
+  }
+  
+  .loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: #F4BF00;
+    animation: p6 2s infinite;
+  }
+  
+  @keyframes p6 {
+    100% {
+      inset: 0
+    }
+  }
